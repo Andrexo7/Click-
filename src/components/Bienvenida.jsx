@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import newlogo from "../assets/newlogo.png"
+import './Bienvenida.css'
 
 export default function Bienvenida() {
   return (
