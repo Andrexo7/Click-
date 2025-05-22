@@ -1,13 +1,13 @@
 body{
-    color: #ffffff;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #1E1E1E;
+    background-color: #ebebeb;
 }
 /* tarjetas productos que estan en el carrito*/
 
 .main-carrito {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     min-height: 100vh;
@@ -16,15 +16,19 @@ body{
 }
 
 .carrito{
+    flex: 1 1 300px;
     margin-top:40px;
-    width: 600px;
-    margin-left: 55px;
+    max-width: 700px;
+    min-width: 400px;
 }
 .producto-en-carrito {
     display: flex;
+    flex: 1 1 300px;
     align-items: center;
+    text-align: center;
     padding: 10px;
-    background-color:#2A2A2A ;
+    color: black;
+    background-color:#ffffff ;
     margin: 10px;
     border-radius: 20px;
     box-shadow: -20px -0px 10px 9px rgba(0,0,0,0.3);
@@ -32,7 +36,8 @@ body{
 
 .producto-en-carrito img{
     height: 100px;
-    width: 100px;
+    width: 30%;
+    max-width: 100px;
     aspect-ratio: 1.5;
 }
 
@@ -44,8 +49,11 @@ body{
 }
 
 .producto-en-carrito .precio{
-    width: 150px;
-    font-size: medium;
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
+  font-size: medium;
+  margin-right: 10px;
 }
 .eliminar img{ 
     width: 25px;
@@ -65,7 +73,7 @@ body{
 .botones{
     font-size: large;
     padding: 1px 1px;
-    background-color: #0D6EFD;
+    background-color: #30AEE0;
     color: white;
     border-radius: 50px;
     cursor: pointer;
@@ -75,16 +83,16 @@ body{
 }
 
 .botones:hover{
-    background-color: #00FF87;
+    background-color: #2a2a2a;
 }
 
 .totales{
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.64);
     border-radius: 20px;
     width: 400px;
-    height: 300px;
     margin-top: 50px;
-    background-color: #2A2A2A;
+    color:black;
+    background-color: white;
     margin-bottom: 50px;
 }
 
@@ -96,16 +104,17 @@ body{
 
 
 .vaciar:hover{
-    background-color: #00FF87;
+    background-color: #2a2a2a;
+    color: white;
 }
 
 .vaciar{
     padding: 10px 10px;
-    background-color: #0D6EFD;
-    color: white;
+    background-color: #30AEE0;
+    color: black;
     border-radius: 10px;
     cursor: pointer;
-    width:300px ;
+    width: 200px;
     margin: 20px;
     border: none;
     font-size: large;
@@ -115,46 +124,66 @@ body{
 
 .comprar{
     padding: 10px 10px;
-    background-color: #0D6EFD;
-    color: white;
+    background-color: #30AEE0;
+    color: black;
     border-radius: 10px;
     cursor: pointer;
-    width:300px ;
+    width:200px ;
     margin: 10px;
     border: none;
     font-size: large;
 }
 
 .comprar:hover{
-    background-color: #00FF87;
+    background-color: #2a2a2a;
+    color: white;
+
 }
     
 
-#carrito-vacio{
-    text-align: center;
-    background-color: #2A2A2A;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
-    max-width: 700px;
-    margin: 40px auto;
-}
 
-#carrito-vacio a {
+.carrito-vacio p {
     color: #ffffff;
     text-decoration: none;
-    background-color: #0D6EFD;
+    background-color: #30AEE0;
     padding: 10px;
     border-radius: 20px;
 }
 
-#carrito-vacio a:hover{
-    background-color: #00FF87;
+.carrito-vacio p:hover{
+    background-color: #2a2a2a;
 }
 
-#carrito-vacio img{
+.carrito-vacio img{
     display: block;
     margin: auto;
     height: 200px;
     padding: 30px;
 }
+
+
+
+/*responsive*/
+
+@media (max-width: 991px) {
+  .main-carrito {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carrito, .totales {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .totales {
+    order: 1;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .carrito {
+    order: 2;
+  }
+}
+

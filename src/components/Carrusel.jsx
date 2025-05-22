@@ -9,13 +9,6 @@ const imagenes = [promo1, promo2, promo3, promo4]
 
 function Carrusel() {
 
-  const siguiente = () => {
-    setIndice((prev) => (prev + 1) % imagenes.length);
-  };
-
-  const anterior = () => {
-    setIndice((prev) => (prev - 1 + imagenes.length) % imagenes.length);
-  };
 
   const [indice, setIndice] = useState(0);
   
@@ -30,9 +23,9 @@ function Carrusel() {
 
   return (
     <div className="carrusel">
-      <button onClick={anterior} className="btn-carrusel anterior">◀</button>
+     
       <img src={imagenes[indice]} alt={`Promoción ${indice + 1}`} />
-      <button onClick={siguiente} className="btn-carrusel siguiente">▶</button>
+      
 
       <div className="puntos">
         {imagenes.map((_, i) => (

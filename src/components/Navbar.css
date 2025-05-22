@@ -1,11 +1,12 @@
 .navbar {
-  background-color: #2A2A2A;
+  background-color:#30AEE0 ;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   position: relative;
   justify-content: space-between;
+  border-radius: 20px;
 }
 
 .logo {
@@ -92,7 +93,7 @@
   margin-right: 10px;
 }
 .navbar-menu li:hover {
-  background-color: #0D6EFD;
+  background-color: #2a2a2a;
   padding: 10px 0px;
   border-radius: 20px;
 }
@@ -108,7 +109,7 @@
   position:absolute;
   display:none;
   list-style: none;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 200px;
   text-align: center;
   z-index: 5;
@@ -117,11 +118,14 @@
 
 .navbar-menu li:hover .menu-categorias {
   display: block;
+  animation-delay: 200ms;
 }
 
 
 .menu-categorias button:hover {
-  background-color: #96b3ff;
+  background-color: #1E1E1E;
+  color: #ffffff;
+  font-size: large;
 }
 
 .menu-categorias .boton{
@@ -132,12 +136,16 @@
   border-color: transparent;
   cursor: pointer;
 }
+.menu-categorias h3{
+  background-color: #1E1E1E;
+  padding: 1px;
+}
 
 
 /*configuracion contador del carrito */
 
 .contador{
-  background-color: #0D6EFD;
+  background-color: #2a2a2a;
   border-radius: 100%;
   display: inline-block;
   width: 20px;
@@ -145,7 +153,6 @@
   aspect-ratio: 1;
   text-align: center;
   color: white;
-  
 }
 
 /* Asegurar que el menú desplegable se posicione correctamente */
@@ -197,7 +204,6 @@
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
-    background-color: #2A2A2A;
   }
 
   .menu-toggle:checked ~ .navbar-menu {

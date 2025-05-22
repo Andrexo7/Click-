@@ -4,7 +4,7 @@ import './Navbar.css';
 import newlogo from "../assets/newlogo.png";
 import carrito from '../assets/carrito.png';
 import menu from "../assets/menu.png";
-import productos from "../data/productos";
+
 
 
 export default function Navbar({contador}) {
@@ -31,8 +31,9 @@ export default function Navbar({contador}) {
       <ul className="navbar-menu">
         <li><Link  to="/">Inicio</Link></li>
         <li><Link to="/ofertas">Ofertas</Link></li>
-        <li> <Link to="/categorias">Categorias</Link>
+        <li> <Link to="/Catalogo">Catalogo</Link>
           <div className="menu-categorias">
+            <h3>categorias</h3>
             <button className="boton" onClick={() => irACategoria("Consolas")}>Consolas🎮</button>
             <button className="boton" onClick={() => irACategoria("Audio")}>Audio🎶</button>
             <button className="boton" onClick={() => irACategoria("Tv")}>TV📺</button>
@@ -43,5 +44,5 @@ export default function Navbar({contador}) {
         <li><Link to="/carrito"><img src={carrito} alt="carrito" /></Link><span className="contador">{contador}</span></li>
       </ul>
     </nav>
-  );
+  ); 
 }

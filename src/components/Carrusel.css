@@ -1,5 +1,5 @@
 .carrusel {
-  background-color: #2A2A2A ;
+  background-color: #ffff ;
   padding: 20px;
   border-radius: 15px;
   border-color: #f2f564;
@@ -10,35 +10,11 @@
   max-width: 1100px;
   }
   
-  .carrusel img {
-    width: 1050px;
-    height: 450px;
-    object-fit: cover;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  
-.btn-carrusel {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 158, 250, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 1;
-}
-
-.anterior {
-  margin-top: 30px;
-  left: 200px;
-}
-
-.siguiente {
-  margin-top: 30px;
-  right: 200px;
+.carrusel img {
+  width: 100%;
+  height: 30%;
+  object-fit: cover;
+  transition: 1s ease-in-out;
 }
 
 .puntos {

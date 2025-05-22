@@ -1,13 +1,26 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 import Navbar from "./components/Navbar";
-import productos from "./data/productos";
 
 
 function App() {
 
-  const [carrito, setCarrito] = useState([]);
+  const [carrito, setCarrito] = useState(() => {
+  const guardado = localStorage.getItem("carrito");
+  try {
+    return guardado ? JSON.parse(guardado) : [];
+  } catch (e) {
+    console.error("Error al cargar carrito desde localStorage:", e);
+    return [];
+  }
+});
+
+useEffect(() => {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}, [carrito]);
+
+
 
   const agregarAlCarrito=(producto) =>{
     const productoExistente =carrito.find((item) => item.id === producto.id);
@@ -55,7 +68,7 @@ function App() {
     <BrowserRouter>
       <Navbar contador={totalProductos}/>
       <AppRoutes agregarAlCarrito={agregarAlCarrito} carrito={carrito} vaciarCarrito={vaciarCarrito}
-      aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad} eliminarProducto={eliminarProducto}  />
+      aumentarCantidad={aumentarCantidad} disminuirCantidad={disminuirCantidad} eliminarProducto={eliminarProducto} />
     </BrowserRouter>
   );
 }

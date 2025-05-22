@@ -1,9 +1,13 @@
-// Archivo index.js simplificado
 const express = require("express");
 const mysql = require("mysql2");
 const app = express();
 
-// Configuración directa sin usar dotenv
+const cors = require("cors");
+app.use(cors({
+  origin:["http://localhost:5173","http://localhost:5173/"]
+}));
+
+// conexión directa (provisional mientras no usamos dotenv)
 const dbConfig = {
   host: 'localhost',
   user: 'root',
@@ -32,18 +36,17 @@ app.get('/', (req, res) => {
   res.send('API funcionando. Visita /productos');
 });
 
-app.get('/productos', (req, res) => {
-  connection.query('SELECT * FROM articulo', (err, results) => {
-    if (err) {
-      console.error('Error en consulta:', err.message);
-      return res.status(500).json({ error: err.message });
-    }
-    res.json(results);
-  });
-});
+// Rutas de productos
+const productosRoutes = require('./productos');
+app.use('/productos', productosRoutes); // Usa todas las rutas desde routes/productos.js
+
+
+
 
 // Iniciar servidor
 const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
+
+
