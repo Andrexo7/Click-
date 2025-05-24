@@ -3,6 +3,10 @@
     width: 100%;
     margin: 100px auto;
   }
+  .descripcion{
+    color:#000
+
+  }
   .details{
     display: flex;
     justify-content: space-around;

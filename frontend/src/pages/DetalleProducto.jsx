@@ -27,7 +27,7 @@ function DetalleProducto({ agregarAlCarrito }) {
             <h2>{producto.nombre}</h2>
           </div>
 
-          <p className="Descripcion">{producto.descripcion}</p>
+          <p className="descripcion">{producto.descripcion}</p>
           <span>Precio: ${Number(producto.precio).toLocaleString("es-CO")}</span>
           <button className="cart" onClick={() => agregarAlCarrito(producto)}>
             Agregar al carrito

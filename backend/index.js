@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 
 // Rutas de productos
 const productosRoutes = require('./productos');
-app.use('/productos', productosRoutes); // Usa todas las rutas desde routes/productos.js
+app.use('/productos', productosRoutes);
 
 
 

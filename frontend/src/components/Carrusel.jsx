@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Carrusel.css"; // Aquí irán los estilos
+import "./Carrusel.css"; 
 import promo1 from "../assets/img/promocion1.gif"
 import promo2 from "../assets/img/promocion2.png"
 import promo3 from "../assets/img/promocion3.gif"

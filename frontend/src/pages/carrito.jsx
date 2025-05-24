@@ -20,7 +20,9 @@ export default function Carrito({ carrito,vaciarCarrito,aumentarCantidad,disminu
           ) : (
             carrito.map((producto) => (
               <div key={producto.id} className="producto-en-carrito">
-                <img src={producto.imagen} alt={producto.nombre} />
+               <Link to={`/producto/${producto.id}`}>
+                 <img src={producto.imagen} alt={producto.nombre} />
+               </Link>
                 <h3>{producto.nombre}</h3>
                 <h2 className="precio">Precio: ${Number(producto.precio).toLocaleString("es-CO")}</h2>
                 <button className="botones"onClick={()=> disminuirCantidad(producto.id)}>-</button>
@@ -36,7 +38,7 @@ export default function Carrito({ carrito,vaciarCarrito,aumentarCantidad,disminu
         <div className="totales">
           <p className="unidades">Productos Totales:{totalUnidades}</p>
           <p className="precio">Total Precio: ${totalPrecio.toLocaleString("es-CO")}</p>
-          <button className="comprar" >Comprar💲</button>
+          <button className="comprar" >Comprar💰</button>
           <button className="vaciar" onClick={vaciarCarrito}>Vaciar Carrito🗑️</button>
     
         </div>
