@@ -1,0 +1,172 @@
+/* Perfil.css */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* User Information Section */
+.informacion-usuario {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.informacion-usuario img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+
+.informacion-usuario h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin: 0;
+}
+
+/* Personal Data Section */
+.datos-personales {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.datos-personales h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.datos-personales h3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 15px 0 5px;
+  text-align: left;
+}
+
+.datos-personales p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0 0 15px;
+  text-align: left;
+}
+
+/* Recent Orders Section */
+.pedidos-recientes {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pedidos-recientes h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.pedido {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pedido:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pedido h3 {
+  font-size: 1.3rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.pedido p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.pedido img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 10px;
+  }
+
+  .informacion-usuario {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .informacion-usuario img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .datos-personales h2,
+  .pedidos-recientes h2 {
+    font-size: 1.5rem;
+  }
+
+  .pedido img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .contenedor {
+    color: #ffff;
+  }
+
+  .informacion-usuario,
+  .datos-personales,
+  .pedidos-recientes {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .informacion-usuario h3,
+  .datos-personales h2,
+  .pedidos-recientes h2,
+  .pedido h3 {
+    color: #66b3ff;
+  }
+
+  .datos-personales h3,
+  .pedido p {
+    color: #b0b0b0;
+  }
+
+  .datos-personales p {
+    color: #999;
+  }
+}

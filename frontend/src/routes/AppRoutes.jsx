@@ -5,6 +5,7 @@ import Shop from "../pages/shop";
 import Carrito from "../pages/carrito";
 import DetalleProducto from "../pages/DetalleProducto";
 import Catalogo from "../pages/Catalogo";
+import Perfil from "../pages/perfil";
 
 export default function AppRoutes({agregarAlCarrito,carrito,vaciarCarrito,aumentarCantidad,disminuirCantidad,eliminarProducto,}){
 
@@ -16,7 +17,8 @@ export default function AppRoutes({agregarAlCarrito,carrito,vaciarCarrito,aument
       <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
       <Route path="/categoria/:categoria" element={<Shop agregarAlCarrito={agregarAlCarrito}/>} />
       <Route path="/Catalogo" element={<Catalogo agregarAlCarrito={agregarAlCarrito} />} />
-
+      <Route path="/perfil"element={<Perfil/>}></Route>
+ 
 
     </Routes>
   );

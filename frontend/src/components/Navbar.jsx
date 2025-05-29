@@ -4,6 +4,8 @@ import './Navbar.css';
 import newlogo from "../assets/newlogo.png";
 import carrito from '../assets/carrito.png';
 import menu from "../assets/menu.png";
+import iconoPerfil from "../assets/iconoPerfil.png";
+
 
 
 
@@ -42,6 +44,7 @@ export default function Navbar({contador}) {
           </div>
         </li>
         <li><Link to="/carrito"><img src={carrito} alt="carrito" /></Link><span className="contador">{contador}</span></li>
+        <li><Link to="/Perfil"><img src={iconoPerfil} alt="perfil" /></Link></li>
       </ul>
     </nav>
   ); 
