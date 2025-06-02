@@ -31,8 +31,8 @@ function Ofertas(agregarAlCarrito) {
 
   return (
     <div className="ofertas-container">
-      <h1>Ofertas</h1>
-      <h2>Al alcance de tus manos </h2>
+      <h1>¡Ofertas!</h1>
+      <h2>Al alcance de tus manos😉</h2>
       <section className="productos-grid">
         {EnOferta.map((articulo) => (
           <ProductCard key={articulo.id} producto={articulo} agregarAlCarrito={agregarAlCarrito} />
