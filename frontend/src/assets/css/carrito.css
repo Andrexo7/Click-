@@ -16,16 +16,17 @@ body{
 }
 
 .carrito{
-    flex: 1 1 300px;
+    flex: 1 1 390px;
     margin-top:40px;
     max-width: 700px;
-    min-width: 400px;
+    min-width: 450px;
 }
 .producto-en-carrito {
     display: flex;
-    flex:  1 1 300px;
+    flex:  1 1;
+    
     align-items: center;
-    text-align: center;
+    text-align: left;
     padding: 10px;
     color: black;
     background-color:#ffffff ;
@@ -34,11 +35,18 @@ body{
     box-shadow: -20px -0px 10px 9px rgba(0,0,0,0.3);
 }
 
+
 .producto-en-carrito img{
-    height: 100px;
-    width: 30%;
-    max-width: 100px;
-    aspect-ratio: 1.5;
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.precioProducto{
+  font-size: small;
+  margin: 0; 
+  width: 80px; 
+  text-align: right;
 }
 
 .producto-en-carrito h3{
@@ -46,7 +54,8 @@ body{
     margin-right: 15px;
     width: 150px;
     text-transform: uppercase;
-    font-size:small;
+    text-align: initialu;
+    font-size:clamp(0.6rem, 2vw, 1rem);
 }
 
 .producto-en-carrito .precio{
@@ -60,13 +69,18 @@ body{
     width: 25px;
     height: 25px;
     align-items: center;
-    margin: 10px;
+    margin: 0;
     cursor: pointer;
 }
 
+.eliminar:hover img {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(7500%) hue-rotate(4deg) brightness(97%) contrast(118%);
+}
+
 .cantidad{
-    font-size: smaller;
-    margin: 5px;
+  font-size: smaller;
+  width: 10px; 
+  text-align: center; /
 }
 
 
@@ -85,6 +99,12 @@ body{
 
 .botones:hover{
     background-color: #2a2a2a;
+}
+
+.acciones-producto{
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
 .totales{
@@ -186,5 +206,18 @@ body{
   .carrito {
     order: 2;
   }
+  .botones{
+    width: 15px;
+  }
+  .eliminar{
+    width: 20px;
+    height:20px;
+  }
+  .producto-en-carrito img{
+    width: 70px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
 }
 

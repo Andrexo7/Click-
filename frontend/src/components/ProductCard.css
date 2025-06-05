@@ -77,11 +77,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-  .card p{
+  .precio-actual{
     font-size: 24px;
     color: antiquewhite;
     font-weight: 700;
     letter-spacing: 1px;
+  }
+  
+  .precio-anterior{
+    font-size: medium;
+    text-decoration: line-through;
   }
   
   .card button{

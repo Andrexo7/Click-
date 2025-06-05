@@ -45,7 +45,9 @@ export default function Navbar({contador}) {
         </li>
         <li><Link to="/carrito"><img src={carrito} alt="carrito" /></Link><span className="contador">{contador}</span></li>
         <li><Link to="/Perfil"><img src={iconoPerfil} alt="perfil" /></Link></li>
+       
       </ul>
     </nav>
   ); 
 }
+// <li><Link to="/login"></Link>login</li>//

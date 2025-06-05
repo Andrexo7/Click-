@@ -1,0 +1,8 @@
+### Obtener todos los productos
+GET http://localhost:4000/productos
+
+###
+
+### Agregar nuevo producto
+POST http://localhost:4000/pagos/create-order
+
