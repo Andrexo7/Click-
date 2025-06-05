@@ -51,7 +51,7 @@ export default function Carrito({ carrito,vaciarCarrito,aumentarCantidad,disminu
       <div className="main-carrito">
         <div className="carrito">
           {carrito.length === 0 ? (
-            <span className="carrito-vacio"> <Link to={'/'}><p>Tu carrito está vacío.</p></Link><img src={vacio} alt="borrar" /></span>
+            <span className="carrito-vacio"> <Link to={'/catalogo'}><p>Tu carrito está vacío agrega algo aqui 👈</p></Link><img src={vacio} alt="borrar" /></span>
            
           ) : (
             carrito.map((producto) => (

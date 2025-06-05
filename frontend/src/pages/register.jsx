@@ -1,57 +1,58 @@
 import React, { useState } from 'react';
-import '../assets/css/login.css'
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
   const [nombre, setNombre] = useState('');
   const [contraseña, setContraseña] = useState('');
   const [message, setMessage] = useState('');
+  const [correo, setCorreo]= useState('')
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/login', {
+      const response = await fetch('http://localhost:4000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nombre, contraseña }),
+        body: JSON.stringify({ nombre, contraseña, correo }),
       });
       const data = await response.json();
       if (!response.ok) {
-        throw new Error(data.message || 'Error al iniciar sesión');
+        throw new Error(data.message || 'Error al registrar');
       }
       setMessage(data.message);
-      localStorage.setItem('rol', data.rol);
-      if (data.rol === 'admin') {
-        navigate('/admin');
-      } else {
-        navigate('/shop');
-      }
+      navigate('/login');
     } catch (error) {
       setMessage(error.message);
     }
   };
 
   return (
-    <div className='login-container'>
-      <h2>Login</h2>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="form-group">
+    <div>
+      <h2>Registro</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
           <label>Nombre:</label>
           <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
         </div>
-        <div className="form-group">
+        <div>
           <label>Contraseña:</label>
           <input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} required />
         </div>
-        <button className="login-button" type="submit">Iniciar sesión</button>
+        <input
+        type="email"
+        value={correo}
+        onChange={(e) => setCorreo(e.target.value)}
+        placeholder="Correo"
+        />
+        <button type="submit">Registrarse</button>
       </form>
       {message && <p>{message}</p>}
-      <p className="register-link">¿No tienes cuenta? <a href="/register">Regístrate</a></p>
+      <p>¿Ya tienes cuenta? <a href="/login">Inicia sesión</a></p>
     </div>
   );
 };
 
-export default Login;
+export default Register;

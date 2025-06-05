@@ -31,7 +31,7 @@ export default function Navbar({contador}) {
       </label>
 
       <ul className="navbar-menu">
-        <li><Link  to="/">Inicio</Link></li>
+        <li><Link  to="/shop">Inicio</Link></li>
         <li><Link to="/ofertas">Ofertas</Link></li>
         <li> <Link to="/Catalogo">Catalogo</Link>
           <div className="menu-categorias">
