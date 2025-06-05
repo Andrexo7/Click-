@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../assets/css/ofertas.css";
 import ProductCard from '../components/ProductCard';
 
+
 function Ofertas(agregarAlCarrito) {
 
   const [EnOferta, setEnOferta] = useState([]);
@@ -25,6 +26,11 @@ function Ofertas(agregarAlCarrito) {
     fetchOfertas();
   }, []);
 
+// scroll de ver más ofertas//
+  const handlescroll = () => {
+    productosRef.current?.scrollIntoView({
+      behavior: 'smooth',});};
+
   if (loading) return <div className="loading">Cargando ofertas...</div>;
   if (error) return <div className="error">Error: {error}</div>;
   if (EnOferta.length === 0) return <div className='no-ofertas'>No hay ofertas disponibles en este momento.</div>;
@@ -33,6 +39,12 @@ function Ofertas(agregarAlCarrito) {
     <div className="ofertas-container">
       <h1>¡Ofertas!</h1>
       <h2>Al alcance de tus manos😉</h2>
+      <p className='ofertas-texto'>Descubre los mejores descuentos en productos seleccionados. 
+        ¡Hasta 70% de descuento!</p>
+
+      <div className='btn-ver-ofertas-container'>
+        <button className='btn-ver-ofertas'>Ver todas las ofertas</button>
+      </div>
       <section className="productos-grid">
         {EnOferta.map((articulo) => (
           <ProductCard key={articulo.id} producto={articulo} agregarAlCarrito={agregarAlCarrito} />
