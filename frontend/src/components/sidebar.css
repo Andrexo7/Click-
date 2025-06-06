@@ -1,0 +1,60 @@
+.sidebar {
+  width: 220px;                /* Un poco más ancho para dar espacio */
+  background-color: #f0f0f0;
+  padding: 20px 15px;          /* Padding horizontal más controlado */
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(244, 243, 243, 0.5); /* sombra más suave */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* Alinea todo al inicio (izquierda) */
+  box-sizing: border-box;     /* Para que el padding no aumente el ancho */
+}
+
+.sidebar h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #222;
+  font-weight: 700;
+  text-align: center; /* ←centrar el texto */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;               /* Para que ocupe todo el ancho */
+}
+
+.sidebar li {
+  margin-bottom: 15px;       /* Espacio un poco más cómodo */
+  width: 100%;               /* Para que el link ocupe todo el li */
+}
+
+.sidebar a {
+  display: block;            /* Link toma todo el ancho del li */
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #fff;
+  background-color: #007bff;  /* Fondo azul en hover para contraste */
+}
+
+.productos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  color: #000; /* texto negro */
+  background-color: #080808; /* fondo blanco opcional */
+}
+
+.productos-tabla th,
+.productos-tabla td {
+  padding: 10px;
+  border: 1px solid #0b0b0b;
+  text-align: left;
+}

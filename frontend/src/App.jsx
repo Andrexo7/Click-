@@ -67,7 +67,7 @@ useEffect(() => {
   function Layout() {
     const location = useLocation();
     // Routes where Navbar should NOT appear
-    const hideNavbarRoutes = ['/', '/register'];
+    const hideNavbarRoutes = ['/', '/register', '/admin', '/AdminProductos', '/clientes','/pedidos'];
 
     // Check if the current route is in hideNavbarRoutes
     const showNavbar = !hideNavbarRoutes.includes(location.pathname);

@@ -8,6 +8,10 @@ import Catalogo from "../pages/Catalogo";
 import Perfil from "../pages/perfil"
 import Login from "../pages/login";
 import Register from "../pages/register";
+import Admin from "../pages/Admin";
+import Productos from "../pages/AdminPages/AdminProductos";
+import Pedidos from "../pages/AdminPages/Pedidos";
+import Clientes from "../pages/AdminPages/Clientes";
 
 export default function AppRoutes({agregarAlCarrito,carrito,vaciarCarrito,aumentarCantidad,disminuirCantidad,eliminarProducto,}){
 
@@ -21,11 +25,15 @@ export default function AppRoutes({agregarAlCarrito,carrito,vaciarCarrito,aument
       <Route path="/Catalogo" element={<Catalogo agregarAlCarrito={agregarAlCarrito} />} />
       <Route path="/perfil" element={<Perfil/>}></Route>
       <Route path="/register" element={<Register />} />
-       <Route path="/shop" element={<Shop agregarAlCarrito={agregarAlCarrito}/>} />
+      <Route path="/shop" element={<Shop agregarAlCarrito={agregarAlCarrito}/>} />
+      <Route path="/Admin" element={<Admin />} />
+      <Route path="/AdminProductos" element={<Productos/>} />
+      <Route path="/Pedidos" element={<Pedidos/>} />
+      <Route path="/clientes" element={<Clientes/>} />
+
+
       
     </Routes>
   );
 }
 
-//<Route path="/admin" element={<Admin />} />
-//<Route path="/login" element={<Login/>} > </Route>

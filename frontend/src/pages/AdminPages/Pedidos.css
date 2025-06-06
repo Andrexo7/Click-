@@ -1,0 +1,178 @@
+/* Estructura principal */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+/* Contenedor de pedidos */
+.pedidos-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pedidos-container h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Grid de pedidos */
+.pedidos-grid {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/* Tabla de pedidos */
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.pedidos-table th {
+  background-color: #3498db;
+  color: white;
+}
+
+.pedidos-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.pedidos-table tr:hover {
+  background-color: #e6f7ff;
+}
+
+.pedidos-table tr.selected {
+  background-color: #d4edda;
+}
+
+/* Información del cliente */
+.cliente-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cliente-nombre {
+  font-weight: bold;
+}
+
+.cliente-contacto {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Contenedor de artículos */
+.articulos-container {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.articulos-container h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+/* Tabla de artículos */
+.articulos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.articulos-table th,
+.articulos-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.articulos-table th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+/* Info de artículo */
+.articulo-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.articulo-imagen {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Botones */
+.refresh-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.btn-detalles {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-detalles:hover {
+  background-color: #1a252f;
+}
+
+/* Estados */
+.loading {
+  text-align: center;
+  font-size: 16px;
+  color: #3498db;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.error {
+  text-align: center;
+  font-size: 16px;
+  color: #e74c3c;
+  margin-top: 20px;
+  padding: 20px;
+}

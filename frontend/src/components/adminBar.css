@@ -1,0 +1,42 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-left img{
+  width: 60px;
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.titulito {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
