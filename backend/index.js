@@ -49,7 +49,7 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     const { correo, contraseña } = req.body;
 
-    const query = 'SELECT * FROM clientes WHERE correo = ? AND contraseña = ?';
+    const query = 'SELECT id, nombre, correo, celular, direccion, rol FROM clientes WHERE correo = ? AND contraseña = ?';
     db.query(query, [correo, contraseña], (err, results) => {
         if (err) {
             console.error(err);
@@ -58,7 +58,17 @@ app.post('/login', (req, res) => {
         }
         if (results.length > 0) {
             const user = results[0];
-            res.status(200).json({ message: 'Login exitoso', rol: user.rol });
+            res.status(200).json({ 
+                message: 'Login exitoso', 
+                user: {  // Enviamos todos los datos del usuario
+                    id: user.id,
+                    nombre: user.nombre,
+                    correo: user.correo,
+                    celular: user.celular,
+                    direccion: user.direccion,
+                    rol: user.rol
+                }
+            });
         } else {
             res.status(401).json({ message: 'Correo o contraseña incorrectos' });
         }

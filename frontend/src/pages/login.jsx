@@ -6,16 +6,18 @@ import newlogo from "../assets/newlogo.png";
 const Login = () => {
   const [correo, setCorreo] = useState('');
   const [contraseña, setContraseña] = useState('');
-  const [error, setError] = useState(''); // Cambiado de message a error
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Limpiar el error cuando se modifican los campos
   useEffect(() => {
     setError('');
   }, [correo, contraseña]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    
     try {
       const response = await fetch('http://localhost:4000/login', {
         method: 'POST',
@@ -24,43 +26,40 @@ const Login = () => {
         },
         body: JSON.stringify({ correo, contraseña }),
       });
+      
       const data = await response.json();
+      
       if (!response.ok) {
         throw new Error(data.message || 'Error al iniciar sesión');
       }
       
-      localStorage.setItem('rol', data.rol);
+      // Guardar datos del usuario en localStorage
+      localStorage.setItem('userData', JSON.stringify(data.user));
+      localStorage.setItem('token', data.token || '');
       
-      // Redirección 
-      if (data.rol === 'admin') {
-        navigate('/admin');
-      } else {
-        navigate('/shop');
-      }
+      // Redirección según el rol
+      navigate(data.user.rol === 'admin' ? '/admin' : '/shop');
       
     } catch (error) {
       setError(error.message);
-      
-      // Limpiar el error
-      setTimeout(() => {
-        setError('');
-      }, 2000);
+      setTimeout(() => setError(''), 3000);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className={`login-container ${error ? 'blur-form' : ''}`}>
-      
       <div className="logoi">
-        <h2>Inicia sesion</h2>
-        <img className='logo' src={newlogo} alt="" />
+        <h2>Inicia sesión</h2>
+        <img className='logo' src={newlogo} alt="Logo" />
       </div>
       
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Correo:</label>
           <input 
-            type="text" 
+            type="email" 
             value={correo} 
             onChange={(e) => setCorreo(e.target.value)} 
             required 
@@ -75,25 +74,28 @@ const Login = () => {
             required 
           />
         </div>
-        <button className="login-button" type="submit">Iniciar sesión</button>
+        <button 
+          className="login-button" 
+          type="submit"
+          disabled={isLoading}
+        >
+          {isLoading ? 'Cargando...' : 'Iniciar sesión'}
+        </button>
       </form>
 
       {error && (
         <>
-          <div 
-            className="message-backdrop" 
-            onClick={() => setError('')}
-          ></div>
+          <div className="message-backdrop" onClick={() => setError('')}></div>
           <div className="login-message error-message">
             {error}
-            <button 
-              className="close-message" 
-              onClick={() => setError('')}
-            >×</button>
+            <button className="close-message" onClick={() => setError('')}>×</button>
           </div>
         </>
       )}
-      <p className="register-link">¿No tienes cuenta? <a href="/register">Regístrate</a></p>
+      
+      <p className="register-link">
+        ¿No tienes cuenta? <a href="/register">Regístrate</a>
+      </p>
     </div>
   );
 };

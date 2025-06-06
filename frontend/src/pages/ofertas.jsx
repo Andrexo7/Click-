@@ -40,10 +40,6 @@ function Ofertas({agregarAlCarrito}) {
       <h2>Al alcance de tus manos😉</h2>
       <p className='ofertas-texto'>Descubre los mejores descuentos en productos seleccionados. 
         ¡Hasta 70% de descuento!</p>
-
-      <div className='btn-ver-ofertas-container'>
-        <button className='btn-ver-ofertas'>Ver todas las ofertas</button>
-      </div>
       <section className="productos-grid">
         {EnOferta.map((producto) => (
           <ProductCard key={producto.id} producto={producto} agregarAlCarrito={agregarAlCarrito} />
